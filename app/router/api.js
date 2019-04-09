@@ -1,7 +1,7 @@
 var User = require('../model/user');
 
 module.exports = function(router){
-    router.post('/user', (req, res) => {
+    router.post('/user', function(req, res) {
         var user = new User();
         user.username = req.body.name;
         user.email = req.body.email;
@@ -11,5 +11,15 @@ module.exports = function(router){
             else res.send(docs);
         });
     });
+
+    router.get('/view', (req, res) => {
+       User.find((err,docs)=>{
+           if(err) res.send("Data Not Found!");
+           else res.json(docs);
+       });
+
+    });
+
     return router;
+
 }

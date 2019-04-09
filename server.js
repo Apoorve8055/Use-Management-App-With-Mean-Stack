@@ -9,7 +9,7 @@ var ctrl = require('./app/controller/controller');
 var path = require('path');
 
 // middleware /
-app.use(express.static(path.join(__dirname, 'app/public/app/assets')));
+app.use(express.static(path.join(__dirname, 'app/public/app')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/api',api);
