@@ -1,0 +1,26 @@
+<div  align="center" class="page-header">
+    <h1>User Registration </h1>
+</div>
+<div >
+    <form  ng-submit="Register.RegClick(RegData);">
+        <label style="float:left">Username : </label>
+        <input type="text" placeholder="Enter Your Username" class="form-control" ng-model="Register.RegData.name">
+        <label style="float:left">Email : </label>
+        <input type="email" placeholder="Enter Your Email" class="form-control" ng-model="Register.RegData.email">
+        <label style="float:left">Password : </label>
+        <input type="password" placeholder="Enter Your Password" class="form-control" ng-model="Register.RegData.pass">
+        <br>
+        <button class="btn btn-primary" type="submit" style="width:100%">SignUp</button>
+    </form>
+</div>
+<div class="row show-hide-message" align="center"  ng-show="Register.successMsg">
+    <div class="alert alert-success" style="width:100%">
+        {{ Register.successMsg }}
+    </div>
+</div>
+
+<div class="row show-hide-message" align="center" ng-show="Register.errMsg">
+    <div class="alert alert-danger" style="width:100%">
+        {{ Register.errMsg }}
+    </div>
+</div>

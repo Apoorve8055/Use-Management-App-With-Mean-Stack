@@ -1,1 +1,1 @@
-angular.module('UserMgmt',['appRoutes']);
+angular.module('UserMgmt',['appRoutes','userController']);

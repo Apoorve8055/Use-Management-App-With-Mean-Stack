@@ -7,8 +7,8 @@ module.exports = function(router){
         user.email = req.body.email;
         user.password = req.body.pass;
         user.save((err, docs) => {
-            if (err) res.send(" Email already Exist ");
-            else res.send(docs);
+            if (err) res.json({ success : false , message : "Registration failed , Email already exist"});
+            else res.json({ success : true , message : "Registration Successfully"});
         });
     });
 

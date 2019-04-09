@@ -13,7 +13,7 @@ app.use(express.static(path.join(__dirname, 'app/public/app')));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
 app.use('/api',api);
-app.use('/',ctrl.index)
+app.use('*',ctrl.index)
 // middleware */
 
 
