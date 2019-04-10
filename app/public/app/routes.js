@@ -3,10 +3,10 @@ angular.module('appRoutes', ['ngRoute'])
     .config(function ($routeProvider,$locationProvider) {
         $routeProvider
             .when('/', {
-                templateUrl: 'view/pages/about.html'
+                templateUrl: 'view/pages/home.html'
             })
             .when('/about',{
-                templateUrl: 'view/pages/home.html'
+                templateUrl: 'view/pages/about.html'
             })
             .when('/SignUp',{
                 templateUrl : 'view/pages/users/register.html',

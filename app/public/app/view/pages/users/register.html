@@ -13,6 +13,20 @@
         <button class="btn btn-primary" type="submit" style="width:100%">SignUp</button>
     </form>
 </div>
+
+<div class=" text-center" ng-show="Register.loading">
+<span class="glyphicon glyphicon-repeat normal-right-spinner"></span>
+    <p>  <div class="spinner-grow text-muted"></div>
+    <div class="spinner-grow text-primary"></div>
+    <div class="spinner-grow text-success"></div>
+    <div class="spinner-grow text-info"></div>
+    <div class="spinner-grow text-warning"></div>
+    <div class="spinner-grow text-danger"></div>
+    <div class="spinner-grow text-secondary"></div>
+    <div class="spinner-grow text-dark"></div>
+    <div class="spinner-grow text-light"></div></p>
+</div>
+
 <div class="row show-hide-message" align="center"  ng-show="Register.successMsg">
     <div class="alert alert-success" style="width:100%">
         {{ Register.successMsg }}
