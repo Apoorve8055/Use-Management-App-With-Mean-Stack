@@ -1,24 +1,30 @@
 angular.module('appRoutes', ['ngRoute'])
 
-    .config(function ($routeProvider,$locationProvider) {
+    .config(function ($routeProvider, $locationProvider) {
         $routeProvider
             .when('/', {
                 templateUrl: 'view/pages/home.html'
             })
-            .when('/about',{
+            .when('/about', {
                 templateUrl: 'view/pages/about.html'
             })
-            .when('/SignUp',{
-                templateUrl : 'view/pages/users/register.html',
-                controller : 'regCtrl',
-                controllerAs : 'Register'
+            .when('/SignIn', {
+                templateUrl: 'view/pages/users/login.html',
+                controller : 'LoginCtrl',
+                controllerAs : 'Login'
+            })
+
+            .when('/SignUp', {
+                templateUrl: 'view/pages/users/register.html',
+                controller: 'regCtrl',
+                controllerAs: 'Register'
             })
             .otherwise({
-                redirectTo : '/'
+                redirectTo: '/'
             });
         $locationProvider.html5Mode({
-            enabled :true,
-            requireBase : false
+            enabled: true,
+            requireBase: false
         });
 
     });

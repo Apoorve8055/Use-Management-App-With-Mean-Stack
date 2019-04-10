@@ -40,13 +40,18 @@
     <script src="routes.js"></script>
     <script src="assets/js/angular-route.min.js"></script>
     <script src="controller/userCtrl.js"></script>
+    <script src="controller/AuthController.js"></script>
+    <script src="services/userServices.js"></script>
+    <script src="services/AuthService.js"></script>
+    <link rel="stylesheet" href="assets/css/animate.css">
+    <script src="assets/js/angular-animate.min.js"></script>
 </head>
 <body ng-app="UserMgmt">
 <div class="container">
     <header class="blog-header py-3">
         <div class="row flex-nowrap justify-content-between align-items-center">
             <div class="col-4 pt-1">
-                <a class="text-muted" href="#">Subscribe</a>
+                 <a class="btn btn-sm btn-outline-secondary" href="/SignIn">Sign in</a>
             </div>
             <div class="col-4 text-center">
                 <a class="blog-header-logo text-dark" href="#">User </a>
@@ -60,7 +65,7 @@
                         <path d="M21 21l-5.2-5.2"></path>
                     </svg>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary" href="#">Sign up</a>
+                <a class="btn btn-sm btn-outline-secondary" href="/SignUp">Sign up</a>
             </div>
         </div>
     </header>
@@ -78,7 +83,7 @@
             <a class="p-2 text-muted" href="#">Science</a>
             <a class="p-2 text-muted" href="#">Health</a>
             <a class="p-2 text-muted" href="#">SignIn</a>
-            <a class="p-2 text-muted" href="/SignUp">SignUp</a>
+            <a class="p-2 text-muted" href="#">SignUp</a>
         </nav>
     </div>
 

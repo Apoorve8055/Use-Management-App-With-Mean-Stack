@@ -1,1 +1,1 @@
-angular.module('UserMgmt',['appRoutes','userController']);
+angular.module('UserMgmt',['appRoutes','userController','ngAnimate','AuthCtrl']);
