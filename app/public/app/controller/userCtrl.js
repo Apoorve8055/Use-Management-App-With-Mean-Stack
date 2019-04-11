@@ -1,5 +1,5 @@
 angular.module('userController', ['UserServices'])
-    .controller('regCtrl', function ($http, $location, $timeout,User) {
+    .controller('regCtrl', function ($http, $location, $timeout, User) {
         var app = this;
         this.RegClick = function (RegData) {
             app.loading = true;
@@ -14,7 +14,7 @@ angular.module('userController', ['UserServices'])
                     app.successMsg = data.data.message;
                     $timeout(function () {
                         $location.path('/about');
-                    },3000);
+                    }, 3000);
                 } else {
                     app.loading = false;
                     app.errStatus = data.data.success;

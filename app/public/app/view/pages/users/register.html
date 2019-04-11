@@ -1,8 +1,8 @@
-<div  align="center" class="page-header">
+<div align="center" class="page-header">
     <h1>User Registration </h1>
 </div>
-<div >
-    <form  ng-submit="Register.RegClick(RegData);">
+<div>
+    <form ng-submit="Register.RegClick(RegData);">
         <label style="float:left">Username : </label>
         <input type="text" placeholder="Enter Your Username" class="form-control" ng-model="Register.RegData.name">
         <label style="float:left">Email : </label>
@@ -15,8 +15,9 @@
 </div>
 
 <div class=" text-center" ng-show="Register.loading">
-<span class="glyphicon glyphicon-repeat normal-right-spinner"></span>
-    <p>  <div class="spinner-grow text-muted"></div>
+    <span class="glyphicon glyphicon-repeat normal-right-spinner"></span>
+    <p>
+    <div class="spinner-grow text-muted"></div>
     <div class="spinner-grow text-primary"></div>
     <div class="spinner-grow text-success"></div>
     <div class="spinner-grow text-info"></div>
@@ -24,10 +25,11 @@
     <div class="spinner-grow text-danger"></div>
     <div class="spinner-grow text-secondary"></div>
     <div class="spinner-grow text-dark"></div>
-    <div class="spinner-grow text-light"></div></p>
+    <div class="spinner-grow text-light"></div>
+    </p>
 </div>
 
-<div class="row show-hide-message " align="center"  ng-show="Register.successMsg" >
+<div class="row show-hide-message " align="center" ng-show="Register.successMsg">
     <div class="alert alert-success" style="width:100%">
         {{ Register.successMsg }}
     </div>

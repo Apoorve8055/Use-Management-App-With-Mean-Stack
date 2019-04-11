@@ -22,8 +22,8 @@ module.exports = function (router) {
             if (users) {
                 var AuthStatus = users.comparePassword(req.body.pass);
                 if (AuthStatus) {
-                    var token = jwt.encode({ "username" : users.username , "email" : users.email  },secret)
-                    res.json({success: true, message: "Successfully LogIn" ,"token" : token  });
+                    var token = jwt.encode({"username": users.username, "email": users.email}, secret)
+                    res.json({success: true, message: "Successfully LogIn", "token": token});
                 } else {
                     res.json({success: false, message: "Password incorrect "});
                 }

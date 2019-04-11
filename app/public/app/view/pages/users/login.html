@@ -1,13 +1,15 @@
-<div  align="center" class="page-header">
+<div align="center" class="page-header">
     <h1>User Login Panel</h1>
 </div>
 
-<div >
-    <form ng-submit="LoginAs.Login(logData);"  >
+<div>
+    <form ng-submit="LoginAs.Login(logData);">
         <label style="float:left">Email : </label>
-        <input type="email" placeholder="Enter Your Email" name="email" class="form-control" ng-model="LoginAs.logData.email">
+        <input type="email" placeholder="Enter Your Email" name="email" class="form-control"
+               ng-model="LoginAs.logData.email">
         <label style="float:left">Password : </label>
-        <input type="password" placeholder="Enter Your Password" name="pass" class="form-control" ng-model="LoginAs.logData.pass">
+        <input type="password" placeholder="Enter Your Password" name="pass" class="form-control"
+               ng-model="LoginAs.logData.pass">
         <br>
         <button class="btn btn-primary" type="submit" style="width:100%">Sign In</button>
     </form>
@@ -15,7 +17,8 @@
 
 <div class=" text-center" ng-show="LoginAs.loading">
     <span class="glyphicon glyphicon-repeat normal-right-spinner"></span>
-    <p>  <div class="spinner-grow text-muted"></div>
+    <p>
+    <div class="spinner-grow text-muted"></div>
     <div class="spinner-grow text-primary"></div>
     <div class="spinner-grow text-success"></div>
     <div class="spinner-grow text-info"></div>
@@ -23,10 +26,11 @@
     <div class="spinner-grow text-danger"></div>
     <div class="spinner-grow text-secondary"></div>
     <div class="spinner-grow text-dark"></div>
-    <div class="spinner-grow text-light"></div></p>
+    <div class="spinner-grow text-light"></div>
+    </p>
 </div>
 
-<div class="row show-hide-message " align="center"  ng-show="LoginAs.successMsg" >
+<div class="row show-hide-message " align="center" ng-show="LoginAs.successMsg">
     <div class="alert alert-success" style="width:100%">
         {{ LoginAs.successMsg }}
     </div>

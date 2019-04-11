@@ -11,8 +11,8 @@ angular.module('appRoutes', ['ngRoute'])
             })
             .when('/SignIn', {
                 templateUrl: 'view/pages/users/login.html',
-                controller : 'LoginCtrl',
-                controllerAs : 'LoginAs'
+                controller: 'LoginCtrl',
+                controllerAs: 'LoginAs'
             })
 
             .when('/SignUp', {
@@ -20,10 +20,10 @@ angular.module('appRoutes', ['ngRoute'])
                 controller: 'regCtrl',
                 controllerAs: 'Register'
             })
-            .when('/logout',{
-                templateUrl : 'view/pages/users/logout.html',
-                controller : 'LoginCtrl',
-                controllerAs : 'LoginAs'
+            .when('/logout', {
+                templateUrl: 'view/pages/users/logout.html',
+                controller: 'LoginCtrl',
+                controllerAs: 'LoginAs'
             })
             .otherwise({
                 redirectTo: '/'

@@ -2,14 +2,13 @@ angular.module('AuthCtrl', ['Auth'])
 
     .controller('LoginCtrl', function (Log, $location, $timeout) {
         var app = this;
-        if(Log.isLoggedIn())
-        {
+        if (Log.isLoggedIn()) {
             console.log("User is Logged In");
-            app.logs = true ;
+            app.logs = true;
 
-        }else{
+        } else {
             console.log("User is Not LogIn");
-            app.logs = false ;
+            app.logs = false;
 
         }
 
@@ -39,7 +38,7 @@ angular.module('AuthCtrl', ['Auth'])
             });
         }
 
-        this.logout = function(){
+        this.logout = function () {
             console.log("Logoutt");
             Log.LogedOut();
             $timeout(function () {
