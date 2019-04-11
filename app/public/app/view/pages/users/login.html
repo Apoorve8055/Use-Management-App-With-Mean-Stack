@@ -3,17 +3,17 @@
 </div>
 
 <div >
-    <form ng-submit="Login.Login(logData);"  >
+    <form ng-submit="LoginAs.Login(logData);"  >
         <label style="float:left">Email : </label>
-        <input type="email" placeholder="Enter Your Email" name="email" class="form-control" ng-model="Login.logData.email">
+        <input type="email" placeholder="Enter Your Email" name="email" class="form-control" ng-model="LoginAs.logData.email">
         <label style="float:left">Password : </label>
-        <input type="password" placeholder="Enter Your Password" name="pass" class="form-control" ng-model="Login.logData.pass">
+        <input type="password" placeholder="Enter Your Password" name="pass" class="form-control" ng-model="LoginAs.logData.pass">
         <br>
-        <button class="btn btn-primary" type="submit" style="width:100%">SignUp</button>
+        <button class="btn btn-primary" type="submit" style="width:100%">Sign In</button>
     </form>
 </div>
 
-<div class=" text-center" ng-show="Register.loading">
+<div class=" text-center" ng-show="LoginAs.loading">
     <span class="glyphicon glyphicon-repeat normal-right-spinner"></span>
     <p>  <div class="spinner-grow text-muted"></div>
     <div class="spinner-grow text-primary"></div>
@@ -26,14 +26,14 @@
     <div class="spinner-grow text-light"></div></p>
 </div>
 
-<div class="row show-hide-message " align="center"  ng-show="Register.successMsg" >
+<div class="row show-hide-message " align="center"  ng-show="LoginAs.successMsg" >
     <div class="alert alert-success" style="width:100%">
-        {{ Register.successMsg }}
+        {{ LoginAs.successMsg }}
     </div>
 </div>
 
-<div class="row show-hide-message" align="center" ng-show="Register.errMsg">
+<div class="row show-hide-message" align="center" ng-show="LoginAs.errMsg">
     <div class="alert alert-danger" style="width:100%">
-        {{ Register.errMsg }}
+        {{ LoginAs.errMsg }}
     </div>
 </div>

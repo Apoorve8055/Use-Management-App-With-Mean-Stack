@@ -1,5 +1,6 @@
 var User = require('../model/user');
-
+var jwt = require('jwt-simple');
+var secret = "Apoorve@verma";
 module.exports = function (router) {
     router.post('/user', function (req, res) {
         var user = new User();
@@ -21,7 +22,8 @@ module.exports = function (router) {
             if (users) {
                 var AuthStatus = users.comparePassword(req.body.pass);
                 if (AuthStatus) {
-                    res.json({success: true, message: "Successfully LogIn "});
+                    var token = jwt.encode({ "username" : users.username , "email" : users.email  },secret)
+                    res.json({success: true, message: "Successfully LogIn" ,"token" : token  });
                 } else {
                     res.json({success: false, message: "Password incorrect "});
                 }
