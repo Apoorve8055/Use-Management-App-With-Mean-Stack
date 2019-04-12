@@ -1,5 +1,5 @@
 var User = require('../model/user');
-var jwt = require('jwt-simple');
+var jwt = require('json-web-token');
 var secret = "Apoorve@verma";
 module.exports = function (router) {
     router.post('/user', function (req, res) {
@@ -22,8 +22,17 @@ module.exports = function (router) {
             if (users) {
                 var AuthStatus = users.comparePassword(req.body.pass);
                 if (AuthStatus) {
-                    var token = jwt.encode({"username": users.username, "email": users.email}, secret)
-                    res.json({success: true, message: "Successfully LogIn", "token": token});
+                    var token = jwt.encode(secret, {
+                        "username": users.username,
+                        "email": users.email
+                    }, function (err, token) {
+                        if (err) {
+                            res.json({success: false, message: "Fail to creat Token "});
+                        } else {
+                            res.json({success: true, message: "Successfully LogIn", "token": token});
+                        }
+                    });
+
                 } else {
                     res.json({success: false, message: "Password incorrect "});
                 }
@@ -39,6 +48,31 @@ module.exports = function (router) {
             else res.json(docs);
         });
 
+    });
+
+    router.use((req, res, next) => {
+
+        var token = req.body.token || req.body.query || req.headers['x-access-token'];
+        if (token) {
+            jwt.decode(secret, token, function (err, decoded) {
+                if (decoded) {
+                    req.decoded = decoded;
+                    next();
+                } else {
+                    res.json({success: false, message: "token Invaild"});
+                }
+
+            });
+
+        } else {
+            res.json({success: false, message: "No token Provided"});
+        }
+
+
+    });
+
+    router.post('/me', (req, res) => {
+        res.send(req.decoded);
     });
 
     return router;
