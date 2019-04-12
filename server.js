@@ -7,6 +7,7 @@ require('./app/db/config.js');
 var api = require('./app/router/api')(router);
 var ctrl = require('./app/controller/controller');
 var path = require('path');
+var passport = require('passport');
 
 // middleware /
 app.use(express.static(path.join(__dirname, 'app/public/app')));
