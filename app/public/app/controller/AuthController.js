@@ -1,16 +1,23 @@
 angular.module('AuthCtrl', ['Auth'])
 
-    .controller('LoginCtrl', function (Log, $location, $timeout) {
+    .controller('LoginCtrl', function (Log, $location, $timeout, $rootScope) {
         var app = this;
-        if (Log.isLoggedIn()) {
-            console.log("User is Logged In");
-            app.logs = true;
 
-        } else {
-            console.log("User is Not LogIn");
-            app.logs = false;
+        $rootScope.$on('$routeChangeStart', function () {
+            if (Log.isLoggedIn()) {
+                console.log("User is Logged In");
+                app.logs = true;
+                Log.getUser().then(function (data) {
+                    console.log(data.data);
+                    app.user = data.data.username;
+                    app.email = data.data.email;
+                });
+            } else {
+                console.log("User is Not LogIn");
+                app.logs = false;
+            }
+        });
 
-        }
 
         this.Login = function (logData) {
             app.loading = true;
@@ -43,6 +50,6 @@ angular.module('AuthCtrl', ['Auth'])
             Log.LogedOut();
             $timeout(function () {
                 $location.path('/logout');
-            }, 3000);
+            }, 1000);
         }
     });

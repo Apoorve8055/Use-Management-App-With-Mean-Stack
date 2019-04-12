@@ -18,6 +18,15 @@ angular.module('Auth', [])
             }
         }
 
+        authFactory.getUser = function(){
+            if(AuthToken.getToken()){
+                return $http.post('/api/me');
+            }else{
+                $q.reject({
+                    "message" : ""
+                });
+            }
+        }
         authFactory.LogedOut = function () {
             AuthToken.setToken();
         }
@@ -39,4 +48,16 @@ angular.module('Auth', [])
             return $window.localStorage.getItem('token');
         }
         return authTokenFactory;
+    })
+
+    .factory('AuthInterceptor',function(AuthToken){
+      authInterceptor = {};
+        authInterceptor.request = function(config){
+            var token = AuthToken.getToken();
+            if(token){
+                config.headers['x-access-token'] = token;
+            }
+            return config;
+        }
+        return authInterceptor;
     });

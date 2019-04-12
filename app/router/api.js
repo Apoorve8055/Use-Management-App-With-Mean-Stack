@@ -61,14 +61,10 @@ module.exports = function (router) {
                 } else {
                     res.json({success: false, message: "token Invaild"});
                 }
-
             });
-
         } else {
             res.json({success: false, message: "No token Provided"});
         }
-
-
     });
 
     router.post('/me', (req, res) => {
