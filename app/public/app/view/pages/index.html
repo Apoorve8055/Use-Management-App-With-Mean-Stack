@@ -62,10 +62,11 @@
                 <a class="blog-header-logo text-dark" href="#">User </a>
             </div>
             <div class="col-4 d-flex justify-content-end align-items-center">
+
                 <a class="btn-outline-secondary" ng-show="main.logs" href="/profile"><i class="fa fa-user " aria-hidden="true"></i> <b>{{
                     main.user}} &nbsp;</b>
                 </a>
-                <a class="btn btn-sm btn-outline-secondary" href="/SignUp">Sign up</a>
+                <a class="btn btn-sm btn-outline-secondary" ng-hide="main.logs" href="/SignUp">Sign up</a>
             </div>
         </div>
     </header>
@@ -96,7 +97,7 @@
 
 </main><!-- /.container -->
 
-<footer class="blog-footer fixed " >
+<footer class="blog-footer " >
     <p> All Right Reserved </p>
     <p>
         ` <a href="#">Back to top</a>

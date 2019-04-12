@@ -49,7 +49,7 @@ angular.module('AuthCtrl', ['Auth'])
             console.log("Logoutt");
             Log.LogedOut();
             $timeout(function () {
-                $location.path('/logout');
+                $location.path('/SignIn');
             }, 1000);
         }
     });
