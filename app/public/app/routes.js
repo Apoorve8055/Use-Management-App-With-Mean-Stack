@@ -20,6 +20,9 @@ angular.module('appRoutes', ['ngRoute'])
                 controller: 'regCtrl',
                 controllerAs: 'Register'
             })
+            .when('/profile',{
+                templateUrl: 'view/pages/profile.html'
+            })
             .when('/logout', {
                 templateUrl: 'view/pages/users/logout.html',
                 controller: 'LoginCtrl',
